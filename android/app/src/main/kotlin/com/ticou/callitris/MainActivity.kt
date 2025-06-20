@@ -1,0 +1,5 @@
+package com.ticou.callitris
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
