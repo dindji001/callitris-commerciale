@@ -22,7 +22,7 @@ dependencies:
   connectivity_plus: ^6.0.1
   
   flutter_launcher_icons: ^0.14.0
-  skeletonizer: ^0.9.0  # Utiliser une version plus ancienne qui est compatible
+  shimmer: ^3.0.0
   syncfusion_flutter_charts: ^29.2.11
   file_picker: ^8.0.0+1
   intl: ^0.20.2

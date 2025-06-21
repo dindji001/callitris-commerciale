@@ -371,7 +371,7 @@ class _VersementPageState extends State<VersementPage> {
                   child: DataTable(
                     headingRowColor: MaterialStateColor.resolveWith(
                         (states) => Colors.blueGrey),
-                    columns: [
+                    columns: const [
                       DataColumn(
                           label: Text('JOURNALIER',
                               style: TextStyle(

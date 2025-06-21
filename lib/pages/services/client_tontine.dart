@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:callitris/pages/auth_provider.dart';
-import 'package:skeletonizer/skeletonizer.dart';
+import 'package:shimmer/shimmer.dart'; // Importez shimmer
 
 class ClientTontinePage extends StatefulWidget {
   @override
@@ -177,10 +177,13 @@ class _ClientTontinePageState extends State<ClientTontinePage> {
                 ? ListView.builder(
                     itemCount: 5, // Nombre arbitraire de squelettes
                     itemBuilder: (context, index) {
-                      return Skeletonizer(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16.0, vertical: 8.0),
+                      // Utiliser Shimmer pour l'effet de chargement
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16.0, vertical: 8.0),
+                        child: Shimmer.fromColors(
+                          baseColor: Colors.grey[300]!,
+                          highlightColor: Colors.grey[100]!,
                           child: Card(
                             color: Color.fromARGB(255, 152, 208, 253),
                             elevation: 4.0,
@@ -190,16 +193,11 @@ class _ClientTontinePageState extends State<ClientTontinePage> {
                             child: ListTile(
                               leading: CircleAvatar(
                                 backgroundColor: Colors.white,
-                                child: SvgPicture.asset(
-                                  'assets/icons/clipboard.svg',
-                                  width: 30.0,
-                                  color: Colors.orange,
-                                ),
                               ),
                               title: Container(
                                 width: double.infinity,
                                 height: 20.0,
-                                color: Colors.grey[300],
+                                color: Colors.white,
                               ),
                               subtitle: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,19 +205,19 @@ class _ClientTontinePageState extends State<ClientTontinePage> {
                                   Container(
                                     width: double.infinity,
                                     height: 16.0,
-                                    color: Colors.grey[300],
+                                    color: Colors.white,
                                   ),
                                   SizedBox(height: 4.0),
                                   Container(
                                     width: double.infinity,
                                     height: 16.0,
-                                    color: Colors.grey[300],
+                                    color: Colors.white,
                                   ),
                                   SizedBox(height: 4.0),
                                   Container(
                                     width: double.infinity,
                                     height: 16.0,
-                                    color: Colors.grey[300],
+                                    color: Colors.white,
                                   ),
                                 ],
                               ),

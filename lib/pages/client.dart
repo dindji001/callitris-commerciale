@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'app_bar_navigation.dart';
 import 'auth_provider.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:skeletonizer/skeletonizer.dart';
+// import 'package:skeletonizer/skeletonizer.dart'; // Supprimé
 
 class ClientPage extends StatefulWidget {
   @override
@@ -256,8 +256,7 @@ class _ClientPageState extends State<ClientPage> {
                   child: Text(
                     'Aucun client trouvé !',
                     style: TextStyle(
-                      fontSize:
-                          18, // Ajustez la taille de la police selon vos besoins
+                      fontSize: 18,
                       color: Colors.red,
                       fontWeight: FontWeight.bold,
                     ),
@@ -268,53 +267,51 @@ class _ClientPageState extends State<ClientPage> {
                     ? ListView.builder(
                         itemCount: 5, // Nombre arbitraire de squelettes
                         itemBuilder: (context, index) {
-                          return Skeletonizer(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16.0, vertical: 8.0),
-                              child: Card(
-                                color: Color.fromARGB(255, 152, 208, 253),
-                                elevation: 4.0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: ListTile(
-                                  leading: CircleAvatar(
-                                    backgroundColor: Colors.white,
-                                    child: SvgPicture.asset(
-                                      'assets/icons/clipboard.svg',
-                                      width: 30.0,
-                                      color: Colors.orange,
-                                    ),
-                                  ),
-                                  title: Container(
-                                    width: double.infinity,
-                                    height: 20.0,
+                          // Remplacer Skeletonizer par un widget de chargement simple
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16.0, vertical: 8.0),
+                            child: Card(
+                              color: Color.fromARGB(255, 152, 208, 253),
+                              elevation: 4.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: ListTile(
+                                leading: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: Container(
+                                    width: 30.0,
+                                    height: 30.0,
                                     color: Colors.grey[300],
                                   ),
-                                  subtitle: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: double.infinity,
-                                        height: 16.0,
-                                        color: Colors.grey[300],
-                                      ),
-                                      SizedBox(height: 4.0),
-                                      Container(
-                                        width: double.infinity,
-                                        height: 16.0,
-                                        color: Colors.grey[300],
-                                      ),
-                                      SizedBox(height: 4.0),
-                                      Container(
-                                        width: double.infinity,
-                                        height: 16.0,
-                                        color: Colors.grey[300],
-                                      ),
-                                    ],
-                                  ),
+                                ),
+                                title: Container(
+                                  width: double.infinity,
+                                  height: 20.0,
+                                  color: Colors.grey[300],
+                                ),
+                                subtitle: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: double.infinity,
+                                      height: 16.0,
+                                      color: Colors.grey[300],
+                                    ),
+                                    SizedBox(height: 4.0),
+                                    Container(
+                                      width: double.infinity,
+                                      height: 16.0,
+                                      color: Colors.grey[300],
+                                    ),
+                                    SizedBox(height: 4.0),
+                                    Container(
+                                      width: double.infinity,
+                                      height: 16.0,
+                                      color: Colors.grey[300],
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
